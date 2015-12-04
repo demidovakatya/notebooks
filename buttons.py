@@ -1,4 +1,5 @@
 # Works in Python 3.x
+# This simple program might be useful to understand tkinter frames and widgets.
 
 from tkinter import *
 
@@ -12,14 +13,14 @@ class Example(Frame):
     def initUI(self):
         self.parent.title("Buttons")
         self.pack(fill = BOTH, expand = True)
-        self.var1 = BooleanVar()
-        self.var2 = IntVar()
+        self.var1 = BooleanVar() # for checkbox
+        self.var2 = IntVar() # for scale
 
         frame1 = Frame(self)
         frame1.pack(fill = BOTH, expand = True)
         label = Label(frame1, text = "Hello")
         label.pack(side = LEFT, padx = 5, pady = 5)
-        area = Entry(frame1)
+        area = Entry(frame1) # creates textfield
         area.pack(padx = 5, expand = True)
 
         frame2 = Frame(self)
@@ -30,18 +31,19 @@ class Example(Frame):
 
         frame3 = Frame(self)
         frame3.pack(fill = BOTH, expand = True)
-        scale = Scale(frame3, from_=0, to=250, command = self.onScale)
+        scale = Scale(frame3, from_ = 0, to = 250, orient = HORIZONTAL, command = self.onScale)
         scale.pack(side = LEFT)
         labelScale = Label(frame3, text = 0, textvariable = self.var2)
         labelScale.pack(side = LEFT, padx = 30)
 
 
-        closeButton = Button(self, text = "Close", command = self.quit)
+        closeButton = Button(self, text = "Close", command = self.quit) # creates a button
         closeButton.pack(side = RIGHT, padx = 5, pady = 5) 
-        okButton = Button(self, text = "OK")
+        okButton = Button(self, text = "OK") # creates a useless button
         okButton.pack(side = RIGHT)
 
     def onClick(self):
+        # toggles title of the window
         if self.var1.get() == True:
             self.master.title("Buttons")
         else:
