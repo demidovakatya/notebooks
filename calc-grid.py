@@ -13,7 +13,8 @@ class Calc(Frame):
 
     def initUI(self):
         self.parent.title("Calculator Grid")
-        Style().configure('TButton', padding = (0, 5, 0, 5), font = "serif 10")
+        Style().theme_use('clam')
+        Style().configure('TButton', padding = (0, 0, 0, 0), font = "monospace 14")
 
         # Create the grid
         self.columnconfigure(0, pad = 3)
