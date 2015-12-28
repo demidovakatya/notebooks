@@ -3,11 +3,12 @@
 # Copies an entire folder and its contents into
 # a ZIP file whose filename increments.
 
-import zipfile, os
+import zipfile
+import os
 
-def createZipFilename(folder):
-    """
-    Figures out which filename should be used based on what files already exist.
+
+def create_zip_filename(folder):
+    """Figures out which filename should be used based on what files already exist.
     """
     number = 1
     while True:
@@ -17,13 +18,13 @@ def createZipFilename(folder):
         number += 1
     return zip_filename
 
-def backupToZip(folder):
-    """
-    Backs up the entire content of a folder into a zip file.
+
+def backup_to_zip(folder):
+    """Backs up the entire content of a folder into a zip file.
     """
     folder = os.path.abspath(folder)
 
-    zip_filename = createZipFilename(folder)
+    zip_filename = create_zip_filename(folder)
 
     print("Creating %s..." % zip_filename)
     backup_zip = zipfile.ZipFile(zip_filename, 'w')
@@ -40,4 +41,4 @@ def backupToZip(folder):
     backup_zip.close()
     print("Done.")
 
-backupToZip("/Users/mac/Documents")
+backup_to_zip("/Users/mac/Documents/_Python")
