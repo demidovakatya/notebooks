@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 import telebot
 import random
-
 from SQLighter import SQLighter
+import config
+import utils
 
-
-bot = telebot.Telebot(config.token)
+bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=["test"])
 def find_file_ids(message):
@@ -36,7 +36,7 @@ def game(message):
 def check_answer(message):
     # Если функция возвращает None -> Человек не в игре
     answer = utils.get_answer_for_user(message.chat.id)
-    # Как Вы помните, answer может быть либо текст, либо None
+    # Как вы помните, answer может быть либо текст, либо None
     # Если None:
     if not answer:
         bot.send_message(message.chat.id, 'Чтобы начать игру, выберите команду /game')
@@ -47,7 +47,7 @@ def check_answer(message):
         if message.text == answer:
             bot.send_message(message.chat.id, 'Верно!', reply_markup=keyboard_hider)
         else:
-            bot.send_message(message.chat.id, 'Увы, Вы не угадали. Попробуйте ещё раз!', reply_markup=keyboard_hider)
+            bot.send_message(message.chat.id, 'Увы, вы не угадали. Попробуйте ещё раз!', reply_markup=keyboard_hider)
         # Удаляем юзера из хранилища (игра закончена)
         utils.finish_user_game(message.chat.id)
 

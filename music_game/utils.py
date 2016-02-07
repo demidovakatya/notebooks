@@ -3,6 +3,8 @@ import shelve
 from SQLighter import SQLighter
 from config import shelve_name, database_name
 from random import shuffle
+import config
+from telebot import types
 
 def count_rows():
     '''
@@ -45,7 +47,7 @@ def finish_user_game(chat_id):
 
 
 def get_answer_for_user(chat_id):
-     """
+    """
     Получаем правильный ответ для текущего юзера.
     В случае, если человек просто ввёл какие-то символы, не начав игру, возвращаем None
     :param chat_id: id юзера
