@@ -1,27 +1,28 @@
 # -*- coding: utf-8 -*-
+
 import shelve
-from SQLighter import SQLighter
-from config import shelve_name, database_name
-from random import shuffle
-import config
 from telebot import types
+from random import shuffle
+from SQLighter import SQLighter
+from config import database_name, shelve_name
+
 
 def count_rows():
-    '''
+    """
     Данный метод считает общее количество строк в базе данных и сохраняет в хранилище.
     Потом из этого количества будем выбирать музыку.
-    '''
+    """
     db = SQLighter(database_name)
     rowsnum = db.count_rows()
     with shelve.open(shelve_name) as storage:
         storage['rows_count'] = rowsnum
 
-    
+
 def get_rows_count():
-    '''
+    """
     Получает из хранилища количество строк в БД
     :return: (int) Число строк
-    '''
+    """
     with shelve.open(shelve_name) as storage:
         rowsnum = storage['rows_count']
     return rowsnum
@@ -63,21 +64,20 @@ def get_answer_for_user(chat_id):
 
 
 def generate_markup(right_answer, wrong_answers):
-    '''
+    """
     Создаем кастомную клавиатуру для выбора ответа
     :param right_answer: Правильный ответ
     :param wrong_answers: Набор неправильных ответов
     :return: Объект кастомной клавиатуры
-    '''
-    markup = types.ReplyKeyboardMarkup(one_time_keyboard = True,
-                                        resize_keyboard = True)
+    """
+    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
     # Склеиваем правильный ответ с неправильными
     all_answers = '{},{}'.format(right_answer, wrong_answers)
-    # Создаём список и записываем в него все элементы
+    # Создаем лист (массив) и записываем в него все элементы
     list_items = []
     for item in all_answers.split(','):
         list_items.append(item)
-    # Перемешиваем элементы
+    # Хорошенько перемешаем все элементы
     shuffle(list_items)
     # Заполняем разметку перемешанными элементами
     for item in list_items:
