@@ -4,3 +4,6 @@ dictionary = {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "ne
 
 def translate(words):
     return map(lambda x: dictionary[x.lower()], words)
+
+# test
+print(translate("merry"))
