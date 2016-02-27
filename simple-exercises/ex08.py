@@ -6,4 +6,8 @@ def is_palindrome(word):
     backwards = word[::-1]
     return backwards == word
 
-is_palindrome("radar")
+# test
+print("Is \"radar\" a palindrome?")
+print(is_palindrome("radar"))
+print("Is \"woof\" a palindrome?")
+print(is_palindrome("woof"))

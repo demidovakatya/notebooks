@@ -11,4 +11,7 @@ def hapax(file_name):
 
     words = text.lower().split()
 
-    return list(filter(lambda word: words.count(word), words))
+    return list(filter(lambda word: words.count(word) == 1, words))
+
+# test
+print(hapax("sample.txt"))

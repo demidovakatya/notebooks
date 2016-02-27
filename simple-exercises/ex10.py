@@ -1,13 +1,12 @@
-'''
-function overlapping()
+# function overlapping()
 
-takes two lists
+# takes two lists
 
-returns True if they have at least one member in common,
-False otherwise.
+# returns True if they have at least one member in common,
+# False otherwise.
 
-You may use your is_member() function, or the in operator, but for the sake of the exercise, you should (also) write it using two nested for-loops.
-'''
+# You may use your is_member() function, or the in operator, but for the sake 
+# of the exercise, you should (also) write it using two nested for-loops.
 
 def overlapping(list1, list2):
     for item1 in list1:

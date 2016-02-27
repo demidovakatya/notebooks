@@ -1,21 +1,18 @@
-'''
-Write a program that maps a list of words into a list of integers
-representing the lengths of the correponding words.
-'''
+# Write a program that maps a list of words into a list of integers
+# representing the lengths of the correponding words.
 
 # much better
-def words_lengths1(words):
+def words_lengths(words):
     lengths = [len(word) for word in words]
     return lengths
 
 # not cool
-def words_lengths2(words):
-    lengths = []
-    for word in words:
-        lengths.append(len(word))
-    return lengths
+# def words_lengths(words):
+#     lengths = []
+#     for word in words:
+#         lengths.append(len(word))
+#     return lengths
 
 # test
 w = ["i", "am", "pythoning"]
-print(words_lengths1(w))
-print(words_lengths2(w))
+print(words_lengths(w))

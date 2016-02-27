@@ -19,7 +19,8 @@
 # Test your program with the following short text: 
 # Mr. Smith bought cheapsite.com for 1.5 million dollars, i.e. he paid a lot for it. Did he mind? Adam Jones Jr. thinks he didn't. In any case, this isn't true... Well, with a probability of .9 it isn't. 
 # The result should be:
-# Mr. Smith bought cheapsite.com for 1.5 million dollars, i.e. he paid a lot for it.
+# Mr. Smith bought cheapsite.com for 1.5 million dollars, i.e. he paid a lot 
+# for it.
 # Did he mind?
 # Adam Jones Jr. thinks he didn't.
 # In any case, this isn't true...
@@ -40,4 +41,5 @@ def sentence_splitter(file_name):
     for s in sentences:
         print(s)
 
+# test
 sentence_splitter("splitter.txt")

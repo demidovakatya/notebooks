@@ -1,4 +1,5 @@
-# Define a function max_of_three() that takes three numbers as arguments and returns the largest of them.
+# Define a function max_of_three() that takes three numbers as arguments and 
+# returns the largest of them.
 
 from ex01 import max
 
