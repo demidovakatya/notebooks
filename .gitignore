@@ -1,1 +1,15 @@
-.ipynb_checkpoints/*
+.ipynb_checkpoints/*movie_lines.txt
+.txt
+.csv
+.ipynb_checkpoints
+Untitled.ipynb
+Untitled1.ipynb
+.Rhistory
+js_nn/data
+movie_lines.txt
+bikes_rent.csv
+titanic.csv
+compare_distributions/data_compare_distr.csv
+compare_distributions/data_compare_distr_old.csv
+dialog_converter/movie_lines.txt
+news_titles/news_titles.txt
